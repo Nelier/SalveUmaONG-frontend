@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +67,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+# SalveUmaONG-frontend
+Criação da parte visual da SPA "Salve uma ONG", utilizando as tecnologias React, para todo o visual e Axios para integração com a API.
+>>>>>>> 5572cacb538a47ed1a6884b4578724cb85cb6422
