@@ -1,5 +1,50 @@
-div.home-container {
-  width: 1440px;
-  height: 840px;
-  background-color: aquamarine;
+.home-container header {
+  width: 100%;
+  max-width: 1180px;
+  padding: 0 30px;
+  margin: 32px auto;
+}
+
+.ongs-list-container ul {
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  grid-gap: 24px;
+  list-style: none;
+}
+
+.ongs-list-container ul li {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  position: relative;
+}
+.ongs-list-container ul p {
+  padding: 10px;
+}
+.ongs-list-container ul strong.ongTitle {
+  display: block;
+  margin-top: 10px;
+  color: #41414d;
+  padding: 10px;
+}
+.ongs-list-container ul strong.ongLocal {
+  display: block;
+  margin-top: 4px;
+  padding: 10px;
+  color: orange;
+}
+
+.ongs-list-container ul button {
+  background-color: red;
+  margin-top: 10px;
+  margin-left: 10px;
+  right: 24px;
+  bottom: 24px;
+  padding: 4px;
+  border-radius: 8px;
+  position: absolute;
+}
+
+.ongs-list-container ul button:hover {
+  opacity: 0.8;
 }
