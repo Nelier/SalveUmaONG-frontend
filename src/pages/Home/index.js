@@ -7,23 +7,48 @@ import api from '../../services/api';
 import './styles.css';
 
 export default function Home() {
+  const [userId, setUserId] = useState('');
   const [ongs, setOngs] = useState('');
+  const [isLoggedIn, setisLoggedIn] = useState(false);
 
   async function handlePopUp() {}
 
+  function isLogged() {
+    if (isLoggedIn) {
+      return <span className="bem-vindo">Bem Vindo(a), ONG</span>;
+    } else {
+      return <span className="bem-vindo">Bem Vindo, Convidado</span>;
+    }
+  }
+
+  function changeLogged() {
+    if (isLoggedIn) {
+      setisLoggedIn(false);
+    } else {
+      setisLoggedIn(true);
+    }
+  }
+
   return (
-    <div class="home-container">
+    <div className="home-component">
       <header>
-        <span>Bem Vinda, ONG</span>
+        {isLogged()}
+        <Link className="login-link" to="/login">
+          <FiLogIn size={18} color="#E02041" className="link-icon" />
+          Login
+        </Link>
+        <button className="ButtonTest" onClick={changeLogged}>
+          Deixar Logado
+        </button>
       </header>
 
-      <div class="ongs-list-container">
+      <div className="ongs-list-container">
         <h1>Lista de ONGs</h1>
 
         <ul>
           <li>
-            <strong class="ongTitle"> Organização dos Programadores</strong>
-            <strong class="ongLocal">São Paulo, SP</strong>
+            <strong className="ongTitle"> Organização dos Programadores</strong>
+            <strong className="ongLocal">São Paulo, SP</strong>
             <p>
               Estamos precisando de programadores voluntários para a criação de
               uma API Rest
@@ -32,8 +57,8 @@ export default function Home() {
           </li>
 
           <li>
-            <strong class="ongTitle"> Organização dos Programadores</strong>
-            <strong class="ongLocal">São Paulo, SP</strong>
+            <strong className="ongTitle"> Organização dos Programadores</strong>
+            <strong className="ongLocal">São Paulo, SP</strong>
             <p>
               Estamos precisando de programadores voluntários para a criação de
               uma API Rest
@@ -42,8 +67,8 @@ export default function Home() {
           </li>
 
           <li>
-            <strong class="ongTitle"> Organização dos Programadores</strong>
-            <strong class="ongLocal">São Paulo, SP</strong>
+            <strong className="ongTitle"> Organização dos Programadores</strong>
+            <strong className="ongLocal">São Paulo, SP</strong>
             <p>
               Estamos precisando de programadores voluntários para a criação de
               uma API Rest
@@ -51,8 +76,8 @@ export default function Home() {
             <button>Ler Mais</button>
           </li>
           <li>
-            <strong class="ongTitle"> Organização dos Programadores</strong>
-            <strong class="ongLocal">São Paulo, SP</strong>
+            <strong className="ongTitle"> Organização dos Programadores</strong>
+            <strong className="ongLocal">São Paulo, SP</strong>
             <p>
               Estamos precisando de programadores voluntários para a criação de
               uma API Rest
@@ -60,8 +85,8 @@ export default function Home() {
             <button>Ler Mais</button>
           </li>
           <li>
-            <strong class="ongTitle"> Organização dos Programadores</strong>
-            <strong class="ongLocal">São Paulo, SP</strong>
+            <strong className="ongTitle"> Organização dos Programadores</strong>
+            <strong className="ongLocal">São Paulo, SP</strong>
             <p>
               Estamos precisando de programadores voluntários para a criação de
               uma API Rest

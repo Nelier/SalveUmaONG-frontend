@@ -1,8 +1,43 @@
-.home-container header {
+.home-component header {
+  height: 65px;
   width: 100%;
-  max-width: 1180px;
+  background-color: rgb(126, 28, 28);
+  max-width: 1490px;
   padding: 0 30px;
-  margin: 32px auto;
+  margin: 0 0 30px 0;
+}
+header span.bem-vindo {
+  width: 200px;
+  display: flex;
+  margin: auto;
+  align-self: center;
+}
+
+header .login-link {
+  width: 80px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 180px;
+  padding: 8px;
+  color: gray;
+}
+
+header .link-icon {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.ButtonTest {
+  right: 40px;
+  position: absolute;
+  display: table-cell;
+  vertical-align: middle;
+  background-color: rgb(201, 22, 22);
+  border-radius: 8px;
+  padding: 3px;
 }
 
 .ongs-list-container ul {
@@ -29,17 +64,17 @@
 }
 .ongs-list-container ul strong.ongLocal {
   display: block;
-  margin-top: 4px;
-  padding: 10px;
+  margin-top: 2px;
+  padding: 8px;
   color: orange;
 }
 
 .ongs-list-container ul button {
-  background-color: red;
+  background-color: rgb(201, 22, 22);
   margin-top: 10px;
   margin-left: 10px;
-  right: 24px;
-  bottom: 24px;
+  right: 12px;
+  bottom: 12px;
   padding: 4px;
   border-radius: 8px;
   position: absolute;
