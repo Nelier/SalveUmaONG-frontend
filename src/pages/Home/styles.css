@@ -5,45 +5,72 @@
   max-width: 1490px;
   padding: 0 30px;
   margin: 0 0 30px 0;
-}
-header span.bem-vindo {
-  width: 200px;
   display: flex;
-  margin: auto;
-  align-self: center;
+  justify-content: space-between;
+  align-items: center;
+}
+header ul {
+  text-decoration: none;
+}
+
+.nav-bar li {
+  display: inline-block;
+  padding: 0 30px;
+}
+
+header span.bem-vindo {
+  color: #ffff;
+  margin: 2px;
 }
 
 header .login-link {
   width: 80px;
-  position: absolute;
-  display: flex;
-  align-items: center;
   right: 180px;
-  padding: 8px;
-  color: gray;
+  color: #ffff;
+  transition: all 0.3 ease 0s;
+}
+header .login-link:hover {
+  color: orange;
+  transition: all 0.3 ease 0s;
 }
 
 header .link-icon {
   position: relative;
-  display: table-cell;
-  vertical-align: middle;
   margin-right: 2px;
 }
 
+header .singup-link {
+  width: 80px;
+  right: 180px;
+  color: #ffff;
+  transition: all 0.3 ease 0s;
+}
+header .singup-link:hover {
+  color: orange;
+  transition: all 0.3 ease 0s;
+}
+
 .ButtonTest {
+  width: 130px;
+  height: 30px;
   right: 40px;
-  position: absolute;
-  display: table-cell;
-  vertical-align: middle;
-  background-color: rgb(201, 22, 22);
-  border-radius: 8px;
+  background-color: orange;
+  color: #ffff;
+  border-radius: 10px;
+  border-color: orange;
   padding: 3px;
+  font-size: medium;
+}
+.ButtonTest:hover {
+  opacity: 0.8;
 }
 
 .ongs-list-container ul {
   display: grid;
   grid-template-columns: repeat(5, 2fr);
-  grid-gap: 24px;
+  grid-gap: 12px;
+  margin-left: 6px;
+  margin-right: 6px;
   list-style: none;
 }
 

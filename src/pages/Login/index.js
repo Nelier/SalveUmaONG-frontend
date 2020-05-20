@@ -19,9 +19,22 @@ export default function Login() {
   return (
     <div className="login-component">
       <header>
-        <span>Logged</span>
-        <button onClick={handleCancel}>Voltar</button>
+        <ul className="nav-bar">
+          <li>
+            <Link className="singup-link" to="/singup">
+              Cadastre-se
+            </Link>
+          </li>
+          <li>
+            <Link className="home-link" to="/">
+              Voltar a Home
+            </Link>
+          </li>
+        </ul>
       </header>
+      <div className="login-container">
+        <h1>Login</h1>
+      </div>
     </div>
   );
 }

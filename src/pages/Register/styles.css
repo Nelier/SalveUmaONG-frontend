@@ -1,0 +1,40 @@
+.register-component header {
+  height: 65px;
+  width: 100%;
+  background-color: rgb(126, 28, 28);
+  max-width: 1490px;
+  padding: 0 30px;
+  margin: 0 0 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header ul {
+  text-decoration: none;
+}
+
+.nav-bar li {
+  display: inline-block;
+  padding: 0 30px;
+}
+header .login-link {
+  width: 80px;
+  right: 180px;
+  color: #ffff;
+  transition: all 0.3 ease 0s;
+}
+header .login-link:hover {
+  color: orange;
+  transition: all 0.3 ease 0s;
+}
+
+header .home-link {
+  width: 80px;
+  right: 180px;
+  color: #ffff;
+  transition: all 0.3 ease 0s;
+}
+header .home-link:hover {
+  color: orange;
+  transition: all 0.3 ease 0s;
+}

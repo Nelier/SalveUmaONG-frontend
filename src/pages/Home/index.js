@@ -33,13 +33,23 @@ export default function Home() {
     <div className="home-component">
       <header>
         {isLogged()}
-        <Link className="login-link" to="/login">
-          <FiLogIn size={18} color="#E02041" className="link-icon" />
-          Login
-        </Link>
-        <button className="ButtonTest" onClick={changeLogged}>
-          Deixar Logado
-        </button>
+        <ul className="nav-bar">
+          <li>
+            <Link className="login-link" to="/login">
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link className="singup-link" to="/singup">
+              Cadastre-se
+            </Link>
+          </li>
+          <li>
+            <button className="ButtonTest" onClick={changeLogged}>
+              Deixar Logado
+            </button>
+          </li>
+        </ul>
       </header>
 
       <div className="ongs-list-container">
@@ -75,6 +85,7 @@ export default function Home() {
             </p>
             <button>Ler Mais</button>
           </li>
+
           <li>
             <strong className="ongTitle"> Organização dos Programadores</strong>
             <strong className="ongLocal">São Paulo, SP</strong>
@@ -84,6 +95,17 @@ export default function Home() {
             </p>
             <button>Ler Mais</button>
           </li>
+
+          <li>
+            <strong className="ongTitle"> Organização dos Programadores</strong>
+            <strong className="ongLocal">São Paulo, SP</strong>
+            <p>
+              Estamos precisando de programadores voluntários para a criação de
+              uma API Rest
+            </p>
+            <button>Ler Mais</button>
+          </li>
+
           <li>
             <strong className="ongTitle"> Organização dos Programadores</strong>
             <strong className="ongLocal">São Paulo, SP</strong>
