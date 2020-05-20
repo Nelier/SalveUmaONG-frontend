@@ -95,7 +95,6 @@ export default function Home() {
             </p>
             <button>Ler Mais</button>
           </li>
-
           <li>
             <strong className="ongTitle"> Organização dos Programadores</strong>
             <strong className="ongLocal">São Paulo, SP</strong>

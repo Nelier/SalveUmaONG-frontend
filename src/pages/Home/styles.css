@@ -4,7 +4,7 @@
   background-color: rgb(126, 28, 28);
   max-width: 1490px;
   padding: 0 30px;
-  margin: 0 0 30px 0;
+  margin: 0 0 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,14 +73,24 @@ header .singup-link:hover {
   margin-right: 6px;
   list-style: none;
 }
+.ongs-list-container h1 {
+  margin-bottom: 10px;
+  padding: 5px;
+}
 
 .ongs-list-container ul li {
+  max-height: 235px;
+  max-width: 258px;
   background: #fff;
   padding: 24px;
   border-radius: 8px;
   position: relative;
 }
 .ongs-list-container ul p {
+  max-width: 210px;
+  max-height: 88px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 10px;
 }
 .ongs-list-container ul strong.ongTitle {
