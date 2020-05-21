@@ -39,7 +39,46 @@ header .home-link:hover {
   transition: all 0.3 ease 0s;
 }
 
+.register-container {
+  margin-left: 5px;
+}
+
 .register-container h1 {
+  margin-bottom: 20px;
+  padding: 8px;
+}
+
+.register-container span {
   margin-bottom: 10px;
   padding: 5px;
+}
+
+.register-container form input {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-gap: 12px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 10px;
+}
+
+.register-container form textarea {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-gap: 12px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 10px;
+}
+.register-container form button {
+  background-color: rgb(201, 22, 22);
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 4px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.register-container form button:hover {
+  opacity: 0.8;
 }
