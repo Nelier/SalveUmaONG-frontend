@@ -1,3 +1,7 @@
+/*eslint no-unused-expressions: [
+  "error", { 
+    "allowShortCircuit": true
+  }]*/
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
@@ -9,11 +13,23 @@ import api from '../../services/api';
 import './styles.css';
 
 export default function Home() {
+  const [ongs, setOngs] = useState([]);
   const { is } = useContext(logged);
+
+  useEffect(() => {
+    try {
+      api.get('singup').then((response) => {
+        setOngs(response.data);
+      });
+    } catch (error) {
+      console.log('Problema ao puxar as ongs' + error);
+    }
+  });
 
   async function handlePopUp() {}
 
   //Testing context
+
   function Logged() {
     if (is) {
       return <span className="bem-vindo">Bem Vindo(a), ONG</span>;
@@ -57,6 +73,18 @@ export default function Home() {
         <h1>Lista de ONGs</h1>
 
         <ul>
+          {ongs.map((ongs) => {
+            return (
+              <li key={ongs.id_ong}>
+                <strong className="ongTitle">{ongs.name}</strong>
+                <strong className="ongLocal">
+                  {ongs.cidade}, {ongs.uf}
+                </strong>
+                <p>{ongs.necessities}</p>
+                <button key={ongs.id_ong}>Ler Mais</button>
+              </li>
+            );
+          })}
           <li>
             <strong className="ongTitle"> Organização dos Programadores</strong>
             <strong className="ongLocal">São Paulo, SP</strong>

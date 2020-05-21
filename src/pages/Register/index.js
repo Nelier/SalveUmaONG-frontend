@@ -15,7 +15,7 @@ export default function Register() {
   const [rua, setRua] = useState('');
   const [bairro, setBairro] = useState('');
   const [cidade, setCidade] = useState('');
-  const [cep, detCep] = useState('');
+  const [cep, setCep] = useState('');
   const [uf, setUf] = useState('');
   //Ong
   const [name, setName] = useState('');
@@ -141,6 +141,11 @@ export default function Register() {
             placeholder="Bairro"
             value={bairro}
             onChange={(e) => setBairro(e.target.value)}
+          />
+          <input
+            placeholder="CEP"
+            value={cep}
+            onChange={(e) => setCep(e.target.value)}
           />
           <input
             placeholder="Cidade"
