@@ -9,28 +9,9 @@ import api from '../../services/api';
 import './styles.css';
 
 export default function Home() {
-  const [userId, setUserId] = useState('');
-  const [ongs, setOngs] = useState('');
-  const [isLoggedIn, setisLoggedIn] = useState(false);
   const { is } = useContext(logged);
 
   async function handlePopUp() {}
-
-  function isLogged() {
-    if (isLoggedIn) {
-      return <span className="bem-vindo">Bem Vindo(a), ONG</span>;
-    } else {
-      return <span className="bem-vindo">Bem Vindo, Convidado</span>;
-    }
-  }
-
-  function changeLogged() {
-    if (isLoggedIn) {
-      setisLoggedIn(false);
-    } else {
-      setisLoggedIn(true);
-    }
-  }
 
   //Testing context
   function Logged() {
