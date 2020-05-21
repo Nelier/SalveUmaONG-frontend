@@ -1,4 +1,4 @@
-.login-component header {
+.profile-component header {
   height: 65px;
   width: 100%;
   background-color: rgb(126, 28, 28);
@@ -18,18 +18,6 @@ header ul {
   padding: 0 30px;
 }
 
-header .singup-link {
-  width: 80px;
-  right: 180px;
-  color: #ffff;
-  transition: all 0.3 ease 0s;
-}
-
-header .singup-link:hover {
-  color: orange;
-  transition: all 0.3 ease 0s;
-}
-
 header .home-link {
   width: 80px;
   right: 180px;
@@ -41,7 +29,7 @@ header .home-link:hover {
   transition: all 0.3 ease 0s;
 }
 
-.login-container h1 {
+.profile-container h1 {
   margin-bottom: 10px;
   padding: 5px;
 }

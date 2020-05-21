@@ -6,21 +6,20 @@ import api from '../../services/api';
 
 import './styles.css';
 
-export default function Register() {
-  async function handleRegister() {
-    return null;
+export default function Login() {
+  const [userId, setUserId] = useState('');
+  const history = useHistory();
+
+  async function handleLogin() {}
+
+  async function handleCancel() {
+    history.push('/');
   }
 
   return (
-    <div className="register-component">
+    <div className="rpofile-component">
       <header>
-        <span></span>
         <ul className="nav-bar">
-          <li>
-            <Link className="login-link" to="/login">
-              Login
-            </Link>
-          </li>
           <li>
             <Link className="home-link" to="/">
               Voltar a Home
@@ -28,8 +27,8 @@ export default function Register() {
           </li>
         </ul>
       </header>
-      <div className="register-container">
-        <h1>Cadastre-se</h1>
+      <div className="profile-container">
+        <h1>Profile</h1>
       </div>
     </div>
   );

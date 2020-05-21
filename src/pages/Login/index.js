@@ -19,6 +19,7 @@ export default function Login() {
   return (
     <div className="login-component">
       <header>
+        <span></span>
         <ul className="nav-bar">
           <li>
             <Link className="singup-link" to="/singup">

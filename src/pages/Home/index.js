@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
+
+import logged from '../../contexts/isLogged';
 
 import api from '../../services/api';
 
@@ -10,6 +12,7 @@ export default function Home() {
   const [userId, setUserId] = useState('');
   const [ongs, setOngs] = useState('');
   const [isLoggedIn, setisLoggedIn] = useState(false);
+  const { is } = useContext(logged);
 
   async function handlePopUp() {}
 
@@ -29,10 +32,27 @@ export default function Home() {
     }
   }
 
+  //Testing context
+  function Logged() {
+    if (is) {
+      return <span className="bem-vindo">Bem Vindo(a), ONG</span>;
+    } else {
+      return <span className="bem-vindo">Bem Vindo, Convidado</span>;
+    }
+  }
+
+  function ContextChange() {
+    if (is) {
+      return <logged.Provider value={(is = false)} />;
+    } else {
+      return <logged.Provider value={(is = true)} />;
+    }
+  }
+
   return (
     <div className="home-component">
       <header>
-        {isLogged()}
+        <Logged />
         <ul className="nav-bar">
           <li>
             <Link className="login-link" to="/login">
@@ -45,7 +65,7 @@ export default function Home() {
             </Link>
           </li>
           <li>
-            <button className="ButtonTest" onClick={changeLogged}>
+            <button className="ButtonTest" onClick={ContextChange}>
               Deixar Logado
             </button>
           </li>

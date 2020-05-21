@@ -38,3 +38,8 @@ header .home-link:hover {
   color: orange;
   transition: all 0.3 ease 0s;
 }
+
+.register-container h1 {
+  margin-bottom: 10px;
+  padding: 5px;
+}
