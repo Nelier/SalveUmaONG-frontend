@@ -75,6 +75,8 @@ export default function Register() {
       <div className="register-container">
         <h1>Cadastre-se</h1>
 
+        <div className="col"></div>
+
         <span>
           Capriche em suas informações, elas serão usadas para que possíveis
           voluntários entrem em contato

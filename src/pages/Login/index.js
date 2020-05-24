@@ -8,9 +8,13 @@ import './styles.css';
 
 export default function Login() {
   const [userId, setUserId] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const history = useHistory();
 
-  async function handleLogin() {}
+  async function handleLogin(e) {
+    e.preventDefault();
+  }
 
   async function handleCancel() {
     history.push('/');
@@ -34,7 +38,26 @@ export default function Login() {
         </ul>
       </header>
       <div className="login-container">
-        <h1>Login</h1>
+        <section className="square-container">
+          <form onSubmit={handleLogin}>
+            <h1>Acessar minha conta</h1>
+            <div className="email-input">
+              <label>
+                {'Email'}
+                <input maxLength="20" type="text" />
+              </label>
+            </div>
+
+            <div className="password-input">
+              <label>
+                {'Senha'}
+                <input maxLength="12" type="password" />
+              </label>
+            </div>
+
+            <button type="submit">Entrar</button>
+          </form>
+        </section>
       </div>
     </div>
   );

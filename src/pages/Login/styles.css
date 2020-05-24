@@ -2,7 +2,6 @@
   height: 65px;
   width: 100%;
   background-color: rgb(126, 28, 28);
-  max-width: 1490px;
   padding: 0 30px;
   margin: 0 0 20px 0;
   display: flex;
@@ -41,7 +40,72 @@ header .home-link:hover {
   transition: all 0.3 ease 0s;
 }
 
-.login-container h1 {
+.login-container {
   margin-bottom: 10px;
   padding: 5px;
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+
+.square-container {
+  background-color: #ffff;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  justify-self: center;
+  align-self: center;
+  width: 340px;
+  height: 270px;
+  position: relative;
+}
+
+.square-container form {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 80px 80px 80px 60px;
+  align-content: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.square-container form h1 {
+  padding: 3px;
+  justify-self: center;
+  align-self: center;
+}
+
+form .email-input {
+  justify-self: center;
+  align-self: center;
+  height: 30px;
+  margin: 10px;
+  padding: 5px;
+}
+.email-input input {
+  justify-self: center;
+  align-self: center;
+  margin-left: 5px;
+}
+
+form .password-input {
+  margin: 10px;
+  height: 30px;
+  padding: 5px;
+}
+.password-input input {
+  margin-left: 5px;
+}
+
+form button {
+  background-color: rgb(201, 22, 22);
+  height: 45px;
+  width: 120px;
+  justify-self: right;
+  right: 12px;
+  bottom: 12px;
+  padding: 4px;
+  border-radius: 8px;
+  position: relative;
 }
