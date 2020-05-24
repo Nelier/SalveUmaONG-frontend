@@ -44,7 +44,7 @@ export default function Login() {
             <div className="email-input">
               <label>
                 {'Email'}
-                <input maxLength="20" type="text" />
+                <input maxLength="30" type="text" />
               </label>
             </div>
 

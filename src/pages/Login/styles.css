@@ -57,11 +57,12 @@ header .home-link:hover {
   width: 340px;
   height: 270px;
   position: relative;
+  box-shadow: 0 10px 6px -6px #777;
 }
 
 .square-container form {
   box-sizing: border-box;
-  display: grid;
+  display: block;
   grid-template-rows: 80px 80px 80px 60px;
   align-content: center;
   justify-content: center;
@@ -71,19 +72,25 @@ header .home-link:hover {
 }
 
 .square-container form h1 {
-  padding: 3px;
-  justify-self: center;
-  align-self: center;
+  padding: 5px;
+  width: 260px;
+  margin: auto;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 form .email-input {
   justify-self: center;
   align-self: center;
-  height: 30px;
+  height: 60px;
   margin: 10px;
   padding: 5px;
 }
 .email-input input {
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid black;
+  width: 280px;
   justify-self: center;
   align-self: center;
   margin-left: 5px;
@@ -91,21 +98,30 @@ form .email-input {
 
 form .password-input {
   margin: 10px;
-  height: 30px;
+  height: 60px;
   padding: 5px;
 }
 .password-input input {
+  height: 40px;
+  width: 280px;
+  border: none;
+  border-bottom: 2px solid black;
   margin-left: 5px;
 }
 
 form button {
   background-color: rgb(201, 22, 22);
+  margin-top: 5px;
+  margin-right: 25px;
   height: 45px;
   width: 120px;
   justify-self: right;
-  right: 12px;
-  bottom: 12px;
+  float: right;
   padding: 4px;
   border-radius: 8px;
   position: relative;
+}
+
+form button:hover {
+  opacity: 0.8;
 }
