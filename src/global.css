@@ -17,6 +17,7 @@ input,
 button,
 textarea {
   font: 400 18px Roboto, sans-serif;
+  resize: none;
 }
 
 button {
