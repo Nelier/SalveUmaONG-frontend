@@ -14,6 +14,10 @@ export default function Login() {
 
   async function handleLogin(e) {
     e.preventDefault();
+    const data = {
+      email,
+      password,
+    };
   }
 
   async function handleCancel() {
@@ -44,14 +48,22 @@ export default function Login() {
             <div className="email-input">
               <label>
                 {'Email'}
-                <input maxLength="30" type="text" />
+                <input
+                  maxLength="30"
+                  type="text"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </label>
             </div>
 
             <div className="password-input">
               <label>
                 {'Senha'}
-                <input maxLength="12" type="password" />
+                <input
+                  maxLength="12"
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </label>
             </div>
 

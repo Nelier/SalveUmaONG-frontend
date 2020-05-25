@@ -47,9 +47,9 @@ export default function Register() {
     };
 
     try {
-      const respose = await api.post('/singup', data);
+      const response = await api.post('/singup', data);
 
-      alert(`Seu ID de acesso: ${respose.data.id_user}`);
+      alert(`Seu ID de acesso: ${response.data.id_user}`);
     } catch (error) {
       alert('Erro ao cadastrar: ' + error);
     }
