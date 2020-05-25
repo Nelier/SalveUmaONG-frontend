@@ -89,11 +89,14 @@ form .email-input {
 .email-input input {
   height: 40px;
   border: none;
-  border-bottom: 2px solid black;
   width: 280px;
-  justify-self: center;
-  align-self: center;
+  border-bottom: 2px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   margin-left: 5px;
+}
+.email-input input:focus {
+  border-bottom: 2px solid black;
 }
 
 form .password-input {
@@ -105,8 +108,13 @@ form .password-input {
   height: 40px;
   width: 280px;
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   margin-left: 5px;
+}
+.password-input input:focus {
+  border-bottom: 2px solid black;
 }
 
 form button {
