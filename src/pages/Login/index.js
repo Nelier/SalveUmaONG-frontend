@@ -18,6 +18,12 @@ export default function Login() {
       email,
       password,
     };
+    try {
+      const response = await api.post('./login', data);
+      alert(`Seu id de usuário é: ${response.data.id_user}`);
+    } catch (error) {
+      alert('Email e senha deram errados');
+    }
   }
 
   async function handleCancel() {
@@ -50,6 +56,7 @@ export default function Login() {
                 {'Email'}
                 <input
                   maxLength="30"
+                  value={email}
                   type="text"
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -61,6 +68,7 @@ export default function Login() {
                 {'Senha'}
                 <input
                   maxLength="12"
+                  value={password}
                   type="password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
