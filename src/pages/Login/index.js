@@ -20,9 +20,10 @@ export default function Login() {
     };
     try {
       const response = await api.post('./login', data);
-      alert(`Seu id de usuário é: ${response.data.id_user}`);
+      localStorage.setItem('id_user', response.data.id_user);
+      history.push('/edit');
     } catch (error) {
-      alert('Email e senha deram errados');
+      alert('Seu email ou senha estão incorretos!');
     }
   }
 

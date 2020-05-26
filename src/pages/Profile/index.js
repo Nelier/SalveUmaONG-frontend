@@ -17,7 +17,7 @@ export default function Login() {
   }
 
   return (
-    <div className="rpofile-component">
+    <div className="profile-component">
       <header>
         <ul className="nav-bar">
           <li>
