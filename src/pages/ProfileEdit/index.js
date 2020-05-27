@@ -6,7 +6,7 @@ import api from '../../services/api';
 
 import './styles.css';
 
-export default function Login() {
+export default function ProfileEdit() {
   const [idUser, setIdUser] = useState('');
   const history = useHistory();
   const localtest = localStorage.getItem('id_user');
@@ -25,7 +25,7 @@ export default function Login() {
   }
 
   if (idUser == '') {
-    return <h1>Error! Can't acess page requested!</h1>;
+    return <h1>Error! Can't access requested page!</h1>;
   }
 
   return (

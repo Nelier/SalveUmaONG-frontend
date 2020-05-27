@@ -5,6 +5,7 @@ import { FiLogIn } from 'react-icons/fi';
 import api from '../../services/api';
 
 import './styles.css';
+import logo from '../../assets/img/logo.png';
 
 export default function Login() {
   const [userId, setUserId] = useState('');
@@ -49,6 +50,9 @@ export default function Login() {
         </ul>
       </header>
       <div className="login-container">
+        <div className="image">
+          <img src={logo} />
+        </div>
         <section className="square-container">
           <form onSubmit={handleLogin}>
             <h1>Acessar minha conta</h1>

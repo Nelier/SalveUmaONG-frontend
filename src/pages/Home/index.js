@@ -14,11 +14,12 @@ import './styles.css';
 
 export default function Home() {
   const [ongs, setOngs] = useState([]);
-  const { is } = useContext(logged);
+  const history = useHistory();
 
   useEffect(() => {
     try {
       api.get('singup').then((response) => {
+        localStorage.removeItem('id_user');
         setOngs(response.data);
       });
     } catch (error) {
@@ -26,30 +27,16 @@ export default function Home() {
     }
   });
 
-  async function handlePopUp() {}
+  async function handleProfile(ongParam) {
+    localStorage.setItem('id_ong', ongParam);
 
-  //Testing context
-
-  function Logged() {
-    if (is) {
-      return <span className="bem-vindo">Bem Vindo(a), ONG</span>;
-    } else {
-      return <span className="bem-vindo">Bem Vindo, Convidado</span>;
-    }
-  }
-
-  function ContextChange() {
-    if (is) {
-      return <logged.Provider value={(is = false)} />;
-    } else {
-      return <logged.Provider value={(is = true)} />;
-    }
+    history.push(`/ong`);
   }
 
   return (
     <div className="home-component">
       <header>
-        <Logged />
+        <span className="bem-vindo">Bem vindo</span>
         <ul className="nav-bar">
           <li>
             <Link className="login-link" to="/login">
@@ -62,7 +49,12 @@ export default function Home() {
             </Link>
           </li>
           <li>
-            <button className="ButtonTest" onClick={ContextChange}>
+            <button
+              className="ButtonTest"
+              onClick={() => {
+                return null;
+              }}
+            >
               Deixar Logado
             </button>
           </li>
@@ -81,68 +73,17 @@ export default function Home() {
                   {ongs.cidade}, {ongs.uf}
                 </strong>
                 <p>{ongs.necessities}</p>
-                <button key={ongs.id_ong}>Ler Mais</button>
+                <button
+                  key={ongs.id_ong}
+                  onClick={() => {
+                    handleProfile(ongs.id_ong);
+                  }}
+                >
+                  Ler Mais
+                </button>
               </li>
             );
           })}
-          <li>
-            <strong className="ongTitle"> Organização dos Programadores</strong>
-            <strong className="ongLocal">São Paulo, SP</strong>
-            <p>
-              Estamos precisando de programadores voluntários para a criação de
-              uma API Rest
-            </p>
-            <button>Ler Mais</button>
-          </li>
-
-          <li>
-            <strong className="ongTitle"> Organização dos Programadores</strong>
-            <strong className="ongLocal">São Paulo, SP</strong>
-            <p>
-              Estamos precisando de programadores voluntários para a criação de
-              uma API Rest
-            </p>
-            <button>Ler Mais</button>
-          </li>
-
-          <li>
-            <strong className="ongTitle"> Organização dos Programadores</strong>
-            <strong className="ongLocal">São Paulo, SP</strong>
-            <p>
-              Estamos precisando de programadores voluntários para a criação de
-              uma API Rest
-            </p>
-            <button>Ler Mais</button>
-          </li>
-
-          <li>
-            <strong className="ongTitle"> Organização dos Programadores</strong>
-            <strong className="ongLocal">São Paulo, SP</strong>
-            <p>
-              Estamos precisando de programadores voluntários para a criação de
-              uma API Rest
-            </p>
-            <button>Ler Mais</button>
-          </li>
-          <li>
-            <strong className="ongTitle"> Organização dos Programadores</strong>
-            <strong className="ongLocal">São Paulo, SP</strong>
-            <p>
-              Estamos precisando de programadores voluntários para a criação de
-              uma API Rest
-            </p>
-            <button>Ler Mais</button>
-          </li>
-
-          <li>
-            <strong className="ongTitle"> Organização dos Programadores</strong>
-            <strong className="ongLocal">São Paulo, SP</strong>
-            <p>
-              Estamos precisando de programadores voluntários para a criação de
-              uma API Rest
-            </p>
-            <button>Ler Mais</button>
-          </li>
         </ul>
       </div>
     </div>

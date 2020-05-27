@@ -48,6 +48,18 @@ header .home-link:hover {
   grid-template-rows: 1fr 2fr 1fr;
 }
 
+.image {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  justify-self: center;
+  align-self: center;
+}
+
+.image img {
+  height: 170px;
+  width: 170px;
+}
+
 .square-container {
   background-color: #ffff;
   grid-column-start: 2;
