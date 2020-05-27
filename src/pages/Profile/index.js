@@ -42,7 +42,12 @@ export default function Profile() {
           setEmail_ong(response.data[0].email_ong);
           setDescription(response.data[0].description);
           setNecessities(response.data[0].necessities);
-          //Terminar de Preencher respostas da requisição...
+          setCel_number(response.data[0].cel_number);
+          setCnpj(response.data[0].cnpj);
+          setRua(response.data[0].rua);
+          setBairro(response.data[0].bairro);
+          setCidade(response.data[0].cidade);
+          setUf(response.data[0].uf);
         } catch (err) {
           alert('Não conseguimos puxar esta ong!');
           history.push('/');
@@ -73,7 +78,25 @@ export default function Profile() {
         </ul>
       </header>
       <div className="profile-container">
-        <h1>Profile</h1>
+        <div className="white-box-1">
+          <div className="content">
+            <h1 className="ongTitle">{name}</h1>
+            <h3 className="ongLocal">{`${cidade}, ${uf}`}</h3>
+            <h2>Quer nos ajudar?</h2>
+            <p className="ongNecessities">{necessities}</p>
+            <h2>Contato</h2>
+            <strong className="label">Local</strong>
+            <p className="rua">{`${bairro}, ${rua}`}</p>
+            <strong className="label">Email</strong>
+            <p className="email">{email_ong}</p>
+          </div>
+        </div>
+
+        <div className="white-box-2">
+          <h1 className="QuemSomos">Quem somos</h1>
+          <h3 className="name-fantasy">{name_fantasy}</h3>
+          <p className="ongDescription">{description}</p>
+        </div>
       </div>
     </div>
   );

@@ -86,15 +86,18 @@ export default function Register() {
           <input
             placeholder="Nome de usuário"
             value={user_name}
+            maxLength="20"
             onChange={(e) => setUser_name(e.target.value)}
           />
           <input
             placeholder="Email"
             value={email_user}
+            maxLength="30"
             onChange={(e) => setEmail_user(e.target.value)}
           />
           <input
             placeholder="Password"
+            maxLength="12"
             value={password}
             type="password"
             onChange={(e) => setPassword(e.target.value)}
@@ -102,61 +105,73 @@ export default function Register() {
           <input
             placeholder="Nome da ONG"
             value={name}
+            maxLength="50"
             onChange={(e) => setName(e.target.value)}
           />
           <input
             placeholder="Nome Fantasia"
+            maxLength="30"
             value={name_fantasy}
             onChange={(e) => setName_fantasy(e.target.value)}
           />
           <input
             placeholder="Email da ONG"
+            maxLength="30"
             value={email_ong}
             onChange={(e) => setEmail_ong(e.target.value)}
           />
           <textarea
             placeholder="Descrição da Causa"
+            maxLength="400"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
           <textarea
             placeholder="Suas Necessidades"
+            maxLength="800"
             value={necessities}
             onChange={(e) => setNecessities(e.target.value)}
           />
           <input
             placeholder="(xx)xxxxx-xxxx"
+            maxLength="14"
             value={cel_number}
             onChange={(e) => setCel_number(e.target.value)}
           />
           <input
-            placeholder="CNPJ"
+            placeholder="xx.xxx.xxx/xxxx-xx"
             value={cnpj}
+            maxLength="18"
             onChange={(e) => setCnpj(e.target.value)}
           />
           <input
             placeholder="Rua"
             value={rua}
+            maxLength="50"
             onChange={(e) => setRua(e.target.value)}
           />
           <input
             placeholder="Bairro"
             value={bairro}
+            maxLength="50"
             onChange={(e) => setBairro(e.target.value)}
           />
           <input
-            placeholder="CEP"
+            placeholder="xxxxxxxx"
             value={cep}
+            maxLength="8"
             onChange={(e) => setCep(e.target.value)}
           />
           <input
             placeholder="Cidade"
             value={cidade}
+            maxLength="30"
             onChange={(e) => setCidade(e.target.value)}
           />
           <input
             placeholder="UF"
             value={uf}
+            maxLength="2"
             onChange={(e) => setUf(e.target.value)}
           />
           <button className="Button" type="submit">
