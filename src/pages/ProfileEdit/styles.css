@@ -119,3 +119,41 @@ header .home-link:hover {
   padding: 8px;
   margin: 5px;
 }
+
+.white-box-2 .buttons-container {
+  float: right;
+}
+
+.buttons-container .update {
+  background-color: rgb(201, 22, 22);
+  margin: 15px;
+  height: 45px;
+  width: 120px;
+  padding: 4px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.buttons-container .update:hover {
+  opacity: 0.8;
+}
+
+.buttons-container .delete {
+  background-color: #fff;
+  margin: 15px;
+  height: 45px;
+  width: 120px;
+  padding: 4px;
+  border-color: black;
+  border-radius: 8px;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttons-container .delete:hover {
+  color: red;
+  border: solid;
+  border-width: 2px;
+  border-color: red;
+  border-radius: 8px;
+}

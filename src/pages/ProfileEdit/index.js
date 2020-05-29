@@ -23,6 +23,9 @@ export default function ProfileEdit() {
   const [cep, setCep] = useState('');
   const [uf, setUf] = useState('');
 
+  const [changeNecessities, setChangeN] = useState('');
+  const [changeDescription, setChangeD] = useState('');
+
   const history = useHistory();
   const localtest = localStorage.getItem('id_user');
 
@@ -56,7 +59,9 @@ export default function ProfileEdit() {
         request();
       }
     } else {
-      alert('Você não tem permissão para acessar esta página!');
+      alert(
+        'Você não tem permissão para acessar esta página! Por favor, faça login novamente.'
+      );
       history.push('/');
     }
   }, [userID]);
@@ -65,6 +70,22 @@ export default function ProfileEdit() {
     localStorage.removeItem('id_user');
   }
 
+  async function updateInfo() {
+    const changeData = {
+      necessities,
+      description,
+      userID,
+    };
+
+    try {
+      const response = await api.put('/singup', changeData);
+      alert('Informações atualizadas com sucesso!');
+    } catch (error) {
+      alert('Erro ao atualizar!');
+    }
+  }
+
+  // Inicio do componente
   if (userID == '') {
     return <h1>Error! Can't access requested page!</h1>;
   }
@@ -99,12 +120,15 @@ export default function ProfileEdit() {
             <textarea
               className="ongNecessities"
               defaultValue={necessities}
+              value={necessities}
+              maxLength="240"
               style={{
                 width: '90%',
                 height: '150px',
                 marginLeft: '20px',
                 marginBottom: '20px',
               }}
+              onChange={(e) => setNecessities(e.target.value)}
             ></textarea>
             <h2>Contato</h2>
             <strong className="label">Local</strong>
@@ -119,14 +143,23 @@ export default function ProfileEdit() {
           <h3 className="name-fantasy">{name_fantasy}</h3>
           <textarea
             className="ongDescription"
+            maxLength="700"
             defaultValue={description}
+            value={description}
             style={{
               width: '90%',
               height: '400px',
               marginLeft: '20px',
               marginBottom: '20px',
             }}
+            onChange={(e) => setDescription(e.target.value)}
           ></textarea>
+          <div className="buttons-container">
+            <button className="delete">DELETAR</button>
+            <button className="update" onClick={() => updateInfo()}>
+              Atualizar
+            </button>
+          </div>
         </div>
       </div>
     </div>

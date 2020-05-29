@@ -122,13 +122,13 @@ export default function Register() {
           />
           <textarea
             placeholder="Descrição da Causa"
-            maxLength="400"
+            maxLength="700"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
           <textarea
             placeholder="Suas Necessidades"
-            maxLength="800"
+            maxLength="300"
             value={necessities}
             onChange={(e) => setNecessities(e.target.value)}
           />
