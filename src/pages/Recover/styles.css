@@ -1,4 +1,4 @@
-.login-component header {
+.recover-component header {
   height: 65px;
   width: 100%;
   background-color: rgb(126, 28, 28);
@@ -17,14 +17,14 @@ header ul {
   padding: 0 30px;
 }
 
-header .singup-link {
+header .login-link {
   width: 80px;
   right: 180px;
   color: #ffff;
   transition: all 0.3 ease 0s;
 }
 
-header .singup-link:hover {
+header .login-link:hover {
   color: orange;
   transition: all 0.3 ease 0s;
 }
@@ -40,24 +40,12 @@ header .home-link:hover {
   transition: all 0.3 ease 0s;
 }
 
-.login-container {
+.recover-container {
   margin-bottom: 10px;
   padding: 5px;
   display: grid;
   grid-template-columns: 3fr 2fr 3fr;
   grid-template-rows: 1fr 2fr 1fr;
-}
-
-.image {
-  grid-column-start: 2;
-  grid-row-start: 1;
-  justify-self: center;
-  align-self: center;
-}
-
-.image img {
-  height: 170px;
-  width: 170px;
 }
 
 .square-container {
@@ -91,14 +79,14 @@ header .home-link:hover {
   margin-bottom: 12px;
 }
 
-form .email-input {
+form .id-input {
   justify-self: center;
   align-self: center;
   height: 60px;
   margin: 10px;
   padding: 5px;
 }
-.email-input input {
+.id-input input {
   height: 40px;
   border: none;
   width: 280px;
@@ -107,7 +95,7 @@ form .email-input {
   transition: 0.5s;
   margin-left: 5px;
 }
-.email-input input:focus {
+.id-input input:focus {
   border-bottom: 2px solid black;
 }
 
@@ -127,20 +115,6 @@ form .password-input {
 }
 .password-input input:focus {
   border-bottom: 2px solid black;
-}
-
-div.recover {
-  display: inline;
-}
-
-div .recover-link {
-  font-weight: bold;
-  margin: 20px;
-  margin-left: 20px;
-  width: 160px;
-  right: 180px;
-  color: red;
-  transition: all 0.3 ease 0s;
 }
 
 form button {

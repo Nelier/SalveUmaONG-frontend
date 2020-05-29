@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Edit from './pages/ProfileEdit';
 import Profile from './pages/Profile';
+import Recover from './pages/Recover';
 
 export default function Routes() {
   return (
@@ -15,6 +16,7 @@ export default function Routes() {
           <Route path="/" exact component={Home} />
           <Route path="/singup" component={Register} />
           <Route path="/login" component={Login} />
+          <Route path="/recover" component={Recover} />
           <Route path="/edit" component={Edit} />
           <Route path="/ong" component={Profile} />
         </Switch>

@@ -79,8 +79,12 @@ export default function Login() {
                 />
               </label>
             </div>
-
-            <button type="submit">Entrar</button>
+            <div className="recover-container">
+              <Link className="recover-link" to="/recover">
+                Esqueci minha senha
+              </Link>
+              <button type="submit">Entrar</button>
+            </div>
           </form>
         </section>
       </div>
