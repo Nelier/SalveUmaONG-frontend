@@ -8,6 +8,7 @@ import './styles.css';
 
 export default function ProfileEdit() {
   const [userID, setUserID] = useState('');
+  const [ongID, setOngID] = useState('');
 
   const [name, setName] = useState('');
   const [name_fantasy, setName_fantasy] = useState('');
@@ -40,6 +41,7 @@ export default function ProfileEdit() {
         const request = async () => {
           try {
             const response = await api.post('/profile', data);
+            setOngID(response.data[0].id_ong);
             setName(response.data[0].name);
             setName_fantasy(response.data[0].name_fantasy);
             setEmail_ong(response.data[0].email_ong);
@@ -82,6 +84,23 @@ export default function ProfileEdit() {
       alert('Informações atualizadas com sucesso!');
     } catch (error) {
       alert('Erro ao atualizar!');
+    }
+  }
+
+  async function deleteInfo() {
+    const deleteData = {
+      ongID: ongID,
+      userID: userID,
+    };
+
+    console.log(deleteData);
+
+    try {
+      const response = await api.post('/delete', deleteData);
+      alert('Suas Conta foi deletada!');
+      history.push('/');
+    } catch (error) {
+      alert('Não foi possivel deletar sua conta!');
     }
   }
 
@@ -155,7 +174,9 @@ export default function ProfileEdit() {
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
           <div className="buttons-container">
-            <button className="delete">DELETAR</button>
+            <button className="delete" onClick={() => deleteInfo()}>
+              DELETAR
+            </button>
             <button className="update" onClick={() => updateInfo()}>
               Atualizar
             </button>

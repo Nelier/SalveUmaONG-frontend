@@ -48,16 +48,6 @@ export default function Home() {
               Cadastre-se
             </Link>
           </li>
-          <li>
-            <button
-              className="ButtonTest"
-              onClick={() => {
-                return null;
-              }}
-            >
-              Deixar Logado
-            </button>
-          </li>
         </ul>
       </header>
 
