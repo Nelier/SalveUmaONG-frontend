@@ -49,33 +49,82 @@ header .home-link:hover {
 
 .register-container span {
   margin-bottom: 10px;
-  padding: 5px;
+  padding: 10px;
+}
+label {
+  width: 100%;
+  float: left;
+  display: inline;
+  margin: 10px;
+}
+
+.register-container .grid {
+  position: relative;
+  margin-top: 15px;
+  margin-left: 15px;
+  display: grid;
+  grid-template-columns: 1.9fr 1.6fr;
+  grid-template-rows: 0.5fr 2.1fr;
+  gap: 8px 15px;
+  grid-template-areas: '. .' '. .';
+}
+
+div.User-Group {
+  margin-bottom: 20px;
+  grid-row: 1;
+  grid-column: 1 / 2;
+}
+
+form .Ong-Group {
+  display: block;
+  grid-row: 2;
+  grid-column: 1 / 2;
 }
 
 .register-container form input {
-  display: grid;
-  grid-template-columns: repeat(4, 2fr);
-  grid-gap: 12px;
+  display: block;
+  width: 70%;
   margin-left: 6px;
   margin-right: 6px;
   margin-top: 10px;
 }
 
 .register-container form textarea {
-  display: grid;
-  grid-template-columns: repeat(4, 2fr);
-  grid-gap: 12px;
-  margin-left: 6px;
-  margin-right: 6px;
-  margin-top: 10px;
+  display: block;
 }
+
+.Text-description {
+  grid-row: 2;
+}
+
+.Text-necessities {
+  grid-row: 1;
+}
+
+form .necessities {
+  width: 300px;
+  height: 200px;
+}
+
+form .description {
+  width: 300px;
+  height: 400px;
+}
+form span {
+  font-weight: bold;
+  color: red;
+}
+
 .register-container form button {
+  display: block;
   background-color: rgb(201, 22, 22);
+  right: 15px;
+  bottom: 15px;
   margin-top: 10px;
   margin-left: 10px;
   padding: 4px;
   border-radius: 8px;
-  position: relative;
+  position: absolute;
 }
 
 .register-container form button:hover {

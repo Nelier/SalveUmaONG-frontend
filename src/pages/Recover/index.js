@@ -6,7 +6,6 @@ import api from '../../services/api';
 
 import './styles.css';
 
-
 export default function Recover() {
   const [userID, setUserID] = useState('');
   const [password, setPassword] = useState('');
@@ -19,11 +18,14 @@ export default function Recover() {
       password,
     };
     try {
-      const response = api.put('/login', data);
+      const response = await api.put('/login', data);
+
       console.log(response);
+      alert('Sua senha foi alterada!');
+      window.location.reload(false);
     } catch (error) {
-        console.log("Deu a exceção?")
-        alert('Não encontramos este Id. Por favor insira um id válido!');
+      console.log('Deu a exceção?');
+      alert('Não encontramos este Id. Por favor insira um id válido!');
     }
   }
 
