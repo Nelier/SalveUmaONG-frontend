@@ -50,6 +50,7 @@ export default function Register() {
       const response = await api.post('/singup', data);
 
       alert(`Seu ID de acesso: ${response.data.id_user}`);
+      window.location.reload(false);
     } catch (error) {
       alert('Erro ao cadastrar: ' + error);
     }
@@ -92,6 +93,7 @@ export default function Register() {
                   value={user_name}
                   maxLength="20"
                   onChange={(e) => setUser_name(e.target.value)}
+                  required="required"
                 />
               </label>
               <label>
@@ -101,6 +103,7 @@ export default function Register() {
                   value={email_user}
                   maxLength="30"
                   onChange={(e) => setEmail_user(e.target.value)}
+                  required="required"
                 />
               </label>
               <label>
@@ -110,6 +113,7 @@ export default function Register() {
                   value={password}
                   type="password"
                   onChange={(e) => setPassword(e.target.value)}
+                  required="required"
                 />
               </label>
             </div>
@@ -121,6 +125,7 @@ export default function Register() {
                   value={name}
                   maxLength="50"
                   onChange={(e) => setName(e.target.value)}
+                  required="required"
                 />
               </label>
               <label>
@@ -139,6 +144,7 @@ export default function Register() {
                   maxLength="50"
                   value={email_ong}
                   onChange={(e) => setEmail_ong(e.target.value)}
+                  required="required"
                 />
               </label>
 
@@ -149,6 +155,7 @@ export default function Register() {
                   maxLength="14"
                   value={cel_number}
                   onChange={(e) => setCel_number(e.target.value)}
+                  required="required"
                 />
               </label>
               <label>
@@ -159,6 +166,7 @@ export default function Register() {
                   value={cnpj}
                   maxLength="18"
                   onChange={(e) => setCnpj(e.target.value)}
+                  required="required"
                 />
               </label>
               <label>
@@ -168,6 +176,7 @@ export default function Register() {
                   value={rua}
                   maxLength="50"
                   onChange={(e) => setRua(e.target.value)}
+                  required="required"
                 />
               </label>
               <label>
@@ -177,6 +186,7 @@ export default function Register() {
                   value={bairro}
                   maxLength="50"
                   onChange={(e) => setBairro(e.target.value)}
+                  required="required"
                 />
               </label>
               <label>
@@ -186,6 +196,7 @@ export default function Register() {
                   value={cep}
                   maxLength="8"
                   onChange={(e) => setCep(e.target.value)}
+                  required="required"
                 />
               </label>
               <label>
@@ -195,6 +206,7 @@ export default function Register() {
                   value={cidade}
                   maxLength="30"
                   onChange={(e) => setCidade(e.target.value)}
+                  required="required"
                 />
               </label>
               <label>
@@ -203,6 +215,7 @@ export default function Register() {
                   value={uf}
                   maxLength="2"
                   onChange={(e) => setUf(e.target.value)}
+                  required="required"
                 />
               </label>
             </div>

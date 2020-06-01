@@ -40,7 +40,10 @@ header .home-link:hover {
   transition: all 0.3 ease 0s;
 }
 
-.recover-container {
+div.recover-container {
+  min-height: auto;
+  min-width: auto;
+  position: relative;
   margin-bottom: 10px;
   padding: 5px;
   display: grid;
@@ -63,7 +66,6 @@ header .home-link:hover {
 .square-container form {
   box-sizing: border-box;
   display: block;
-  grid-template-rows: 80px 80px 80px 60px;
   align-content: center;
   justify-content: center;
   position: absolute;
