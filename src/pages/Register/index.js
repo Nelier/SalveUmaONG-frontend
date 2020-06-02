@@ -152,7 +152,7 @@ export default function Register() {
                 Número de Contato<span className="required">*</span>
                 <input
                   placeholder="(xx)xxxxx-xxxx"
-                  maxLength="14"
+                  maxLength="11"
                   value={cel_number}
                   onChange={(e) => setCel_number(e.target.value)}
                   required="required"
@@ -164,7 +164,7 @@ export default function Register() {
                 <input
                   placeholder="xx.xxx.xxx/xxxx-xx"
                   value={cnpj}
-                  maxLength="18"
+                  maxLength="14"
                   onChange={(e) => setCnpj(e.target.value)}
                   required="required"
                 />

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiLogIn } from 'react-icons/fi';
+import Popup from 'reactjs-popup';
 
 import api from '../../services/api';
 
@@ -154,6 +154,8 @@ export default function ProfileEdit() {
             <p className="rua">{`${bairro}, ${rua}`}</p>
             <strong className="label">Email</strong>
             <p className="email">{email_ong}</p>
+            <strong className="label">Telefone</strong>
+            <p className="email">{cel_number}</p>
           </div>
         </div>
 
@@ -174,12 +176,15 @@ export default function ProfileEdit() {
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
           <div className="buttons-container">
-            <button className="delete" onClick={() => deleteInfo()}>
-              DELETAR
-            </button>
-            <button className="update" onClick={() => updateInfo()}>
-              Atualizar
-            </button>
+            <Popup
+              trigger={<button className="delete">DELETAR</button>}
+              position="top center"
+            >
+              <div>Deseja mesmo deletar? Esta ação não pode ser desfeita.</div>
+              <button className="update" onClick={() => updateInfo()}>
+                CONFIRMAR
+              </button>
+            </Popup>
           </div>
         </div>
       </div>

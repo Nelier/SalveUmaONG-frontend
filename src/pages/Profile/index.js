@@ -89,6 +89,8 @@ export default function Profile() {
             <p className="rua">{`${bairro}, ${rua}`}</p>
             <strong className="label">Email</strong>
             <p className="email">{email_ong}</p>
+            <strong className="label">Telefone</strong>
+            <p className="email">{cel_number}</p>
           </div>
         </div>
 
