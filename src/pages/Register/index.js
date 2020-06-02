@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiLogIn } from 'react-icons/fi';
+import Popup from 'reactjs-popup';
 
 import api from '../../services/api';
 
@@ -26,6 +26,10 @@ export default function Register() {
   const [cel_number, setCel_number] = useState('');
   const [cnpj, setCnpj] = useState('');
 
+  const [recivedID, setRecivedID] = useState('');
+
+  const history = useHistory();
+
   async function handleRegister(e) {
     e.preventDefault();
     const data = {
@@ -49,8 +53,8 @@ export default function Register() {
     try {
       const response = await api.post('/singup', data);
 
-      alert(`Seu ID de acesso: ${response.data.id_user}`);
-      window.location.reload(false);
+      setRecivedID(response.data.id_user);
+      //alert(`Seu ID de acesso: ${response.data.id_user}`);
     } catch (error) {
       alert('Erro ao cadastrar: ' + error);
     }
@@ -159,7 +163,7 @@ export default function Register() {
                 />
               </label>
               <label>
-                Seu CNPJ (Formatado com pontos)
+                CNPJ
                 <span className="required">*</span>
                 <input
                   placeholder="xx.xxx.xxx/xxxx-xx"
@@ -170,7 +174,7 @@ export default function Register() {
                 />
               </label>
               <label>
-                Sua Rua e Número<span className="required">*</span>
+                Rua e Número<span className="required">*</span>
                 <input
                   placeholder="Rua do Ipiranga, 35"
                   value={rua}
@@ -180,7 +184,7 @@ export default function Register() {
                 />
               </label>
               <label>
-                Seu Bairro<span className="required">*</span>
+                Bairro<span className="required">*</span>
                 <input
                   placeholder="Bairro da Tijuca"
                   value={bairro}
@@ -230,9 +234,40 @@ export default function Register() {
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </label>
-              <button className="Button" type="submit">
-                Enviar
-              </button>
+              <Popup
+                trigger={
+                  <button className="Button" type="submit">
+                    Enviar
+                  </button>
+                }
+                closeOnDocumentClick
+                modal
+              >
+                <div className="popup-modal">
+                  <div className="popup-header">ATENÇÃO</div>
+                  <div className="popup-content">
+                    <p>
+                      Por favor, salve seu ID. Ele sera apresentado apenas esta
+                      vez e servirá para que você possa recuperar a sua senha
+                      caso precise futuramente.
+                    </p>
+                    <div style={{ marginTop: '15px' }}>
+                      <strong>Seu id:</strong>
+                      <span>{recivedID}</span>
+                    </div>
+                    <div className="popup-button">
+                      <button
+                        className="delete"
+                        onClick={() => {
+                          history.push('/');
+                        }}
+                      >
+                        Confirmar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </Popup>
             </div>
             <div className="Text-necessities">
               <label>

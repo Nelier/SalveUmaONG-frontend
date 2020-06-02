@@ -52,8 +52,6 @@ header .home-link:hover {
   padding: 10px;
 }
 label {
-  width: 100%;
-  float: left;
   display: inline;
   margin: 10px;
 }
@@ -129,4 +127,40 @@ form span {
 
 .register-container form button:hover {
   opacity: 0.8;
+}
+
+.popup-modal {
+  height: 170px;
+}
+
+.popup-modal > .popup-header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.popup-modal > .popup-content {
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.popup-modal > .delete {
+  background-color: #fff;
+  float: right;
+  height: 45px;
+  width: 120px;
+  padding: 4px;
+  border-color: black;
+  border-radius: 8px;
+  position: relative;
+  transition: 0.5s;
+}
+
+.popup-modal > .delete:hover {
+  color: red;
+  border: solid;
+  border-width: 2px;
+  border-color: red;
+  border-radius: 8px;
 }

@@ -181,10 +181,13 @@ export default function ProfileEdit() {
               position="top center"
             >
               <div>Deseja mesmo deletar? Esta ação não pode ser desfeita.</div>
-              <button className="update" onClick={() => updateInfo()}>
+              <button className="delete" onClick={() => deleteInfo()}>
                 CONFIRMAR
               </button>
             </Popup>
+            <button className="update" onClick={() => updateInfo()}>
+              ATUALIZAR
+            </button>
           </div>
         </div>
       </div>
