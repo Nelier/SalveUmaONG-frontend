@@ -28,6 +28,8 @@ export default function Register() {
 
   const [recivedID, setRecivedID] = useState('');
 
+  const [modal, setModal] = useState(false);
+
   const history = useHistory();
 
   async function handleRegister(e) {
@@ -54,6 +56,8 @@ export default function Register() {
       const response = await api.post('/singup', data);
 
       setRecivedID(response.data.id_user);
+
+      setModal(true);
       //alert(`Seu ID de acesso: ${response.data.id_user}`);
     } catch (error) {
       alert('Erro ao cadastrar: ' + error);
@@ -90,6 +94,9 @@ export default function Register() {
         <form onSubmit={handleRegister}>
           <div className="grid">
             <div className="User-Group">
+              <div style={{ margin: '10px' }}>
+                <strong>Informações de Usuário</strong>
+              </div>
               <label>
                 Nome de Usuário<span className="required">*</span>
                 <input
@@ -122,6 +129,9 @@ export default function Register() {
               </label>
             </div>
             <div className="Ong-Group">
+              <div style={{ margin: '10px' }}>
+                <strong>Informações da Organização</strong>
+              </div>
               <label>
                 Nome da sua ONG<span className="required">*</span>
                 <input
@@ -234,15 +244,10 @@ export default function Register() {
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </label>
-              <Popup
-                trigger={
-                  <button className="Button" type="submit">
-                    Enviar
-                  </button>
-                }
-                closeOnDocumentClick
-                modal
-              >
+              <button className="Button" type="submit">
+                Enviar
+              </button>
+              <Popup open={modal} closeOnDocumentClick modal>
                 <div className="popup-modal">
                   <div className="popup-header">ATENÇÃO</div>
                   <div className="popup-content">
@@ -259,6 +264,7 @@ export default function Register() {
                       <button
                         className="delete"
                         onClick={() => {
+                          setModal(false);
                           history.push('/');
                         }}
                       >
