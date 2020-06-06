@@ -5,6 +5,7 @@ import Popup from 'reactjs-popup';
 import api from '../../services/api';
 
 import './styles.css';
+import logo from '../../assets/img/logoWeb.png';
 
 export default function ProfileEdit() {
   const [userID, setUserID] = useState('');
@@ -112,7 +113,9 @@ export default function ProfileEdit() {
   return (
     <div className="edit-component">
       <header>
-        <span></span>
+        <span>
+          <img src={logo} style={{ height: '60px', width: '70px' }} />
+        </span>
         <ul className="nav-bar">
           <li>
             <Link

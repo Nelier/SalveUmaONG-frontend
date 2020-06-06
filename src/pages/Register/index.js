@@ -5,6 +5,7 @@ import Popup from 'reactjs-popup';
 import api from '../../services/api';
 
 import './styles.css';
+import logoWeb from '../../assets/img/logoWeb.png';
 
 export default function Register() {
   //User
@@ -67,7 +68,9 @@ export default function Register() {
   return (
     <div className="register-component">
       <header>
-        <span></span>
+        <span>
+          <img src={logoWeb} style={{ height: '60px', width: '70px' }} />
+        </span>
         <ul className="nav-bar">
           <li>
             <Link className="login-link" to="/login">
@@ -168,7 +171,11 @@ export default function Register() {
                   placeholder="(xx)xxxxx-xxxx"
                   maxLength="11"
                   value={cel_number}
-                  onChange={(e) => setCel_number(e.target.value)}
+                  onChange={(e) => {
+                    let aux = e.target.value;
+                    let value = aux.replace(/\D/g, '');
+                    setCel_number(value);
+                  }}
                   required="required"
                 />
               </label>
@@ -179,7 +186,11 @@ export default function Register() {
                   placeholder="xx.xxx.xxx/xxxx-xx"
                   value={cnpj}
                   maxLength="14"
-                  onChange={(e) => setCnpj(e.target.value)}
+                  onChange={(e) => {
+                    let aux = e.target.value;
+                    let value = aux.replace(/\D/g, '');
+                    setCnpj(value);
+                  }}
                   required="required"
                 />
               </label>
@@ -209,7 +220,11 @@ export default function Register() {
                   placeholder="xxxxxxxx"
                   value={cep}
                   maxLength="8"
-                  onChange={(e) => setCep(e.target.value)}
+                  onChange={(e) => {
+                    let aux = e.target.value;
+                    let value = aux.replace(/\D/g, '');
+                    setCep(value);
+                  }}
                   required="required"
                 />
               </label>

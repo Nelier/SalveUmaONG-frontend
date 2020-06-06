@@ -6,6 +6,7 @@ import api from '../../services/api';
 
 import './styles.css';
 import logo from '../../assets/img/logo.png';
+import logoWeb from '../../assets/img/logoWeb.png';
 
 export default function Login() {
   const [userId, setUserId] = useState('');
@@ -35,7 +36,9 @@ export default function Login() {
   return (
     <div className="login-component">
       <header>
-        <span></span>
+        <span>
+          <img src={logoWeb} style={{ height: '60px', width: '70px' }} />
+        </span>
         <ul className="nav-bar">
           <li>
             <Link className="singup-link" to="/singup">

@@ -20,6 +20,8 @@ header ul {
 header span.bem-vindo {
   color: #ffff;
   margin: 2px;
+  top: 25px;
+  position: absolute;
 }
 
 header .login-link {

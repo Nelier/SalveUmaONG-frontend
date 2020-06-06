@@ -5,6 +5,7 @@ import { FiLogIn } from 'react-icons/fi';
 import api from '../../services/api';
 
 import './styles.css';
+import logo from '../../assets/img/logoWeb.png';
 
 export default function Recover() {
   const [userID, setUserID] = useState('');
@@ -32,7 +33,9 @@ export default function Recover() {
   return (
     <div className="recover-component">
       <header>
-        <span></span>
+        <span>
+          <img src={logo} style={{ height: '60px', width: '70px' }} />
+        </span>
         <ul className="nav-bar">
           <li>
             <Link className="login-link" to="/login">

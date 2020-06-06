@@ -5,6 +5,7 @@ import { FiLogIn } from 'react-icons/fi';
 import api from '../../services/api';
 
 import './styles.css';
+import logo from '../../assets/img/logoWeb.png';
 
 export default function Profile() {
   const [ongID, setOngId] = useState('');
@@ -68,7 +69,9 @@ export default function Profile() {
   return (
     <div className="profile-component">
       <header>
-        <span></span>
+        <span>
+          <img src={logo} style={{ height: '60px', width: '70px' }} />
+        </span>
         <ul className="nav-bar">
           <li>
             <Link className="home-link" to="/">

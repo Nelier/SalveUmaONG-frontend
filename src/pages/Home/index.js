@@ -11,6 +11,7 @@ import logged from '../../contexts/isLogged';
 import api from '../../services/api';
 
 import './styles.css';
+import logo from '../../assets/img/logoWeb.png';
 
 export default function Home() {
   const [ongs, setOngs] = useState([]);
@@ -36,7 +37,10 @@ export default function Home() {
   return (
     <div className="home-component">
       <header>
-        <span className="bem-vindo">Bem vindo</span>
+        <div style={{ display: 'inline' }}>
+          <img src={logo} style={{ height: '60px', width: '70px' }} />
+          <span className="bem-vindo">Bem vindo</span>
+        </div>
         <ul className="nav-bar">
           <li>
             <Link className="login-link" to="/login">
