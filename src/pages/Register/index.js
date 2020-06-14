@@ -267,9 +267,10 @@ export default function Register() {
                   <div className="popup-header">ATENÇÃO</div>
                   <div className="popup-content">
                     <p>
-                      Por favor, salve seu ID. Ele sera apresentado apenas esta
+                      Por favor, salve seu ID. Ele será apresentado apenas esta
                       vez e servirá para que você possa recuperar a sua senha
-                      caso precise futuramente.
+                      caso precise futuramente.{' '}
+                      <strong>Este ID será apresentado somente uma vez</strong>
                     </p>
                     <div style={{ marginTop: '15px' }}>
                       <strong>Seu id:</strong>
