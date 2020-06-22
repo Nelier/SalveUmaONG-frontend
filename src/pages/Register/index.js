@@ -58,7 +58,12 @@ export default function Register() {
 
       setRecivedID(response.data.id_user);
 
-      setModal(true);
+      if (recivedID != '') {
+        setModal(true);
+      } else {
+        alert('Email já cadastrado');
+      }
+
       //alert(`Seu ID de acesso: ${response.data.id_user}`);
     } catch (error) {
       alert('Erro ao cadastrar: ' + error);
@@ -210,7 +215,11 @@ export default function Register() {
                   placeholder="Bairro da Tijuca"
                   value={bairro}
                   maxLength="50"
-                  onChange={(e) => setBairro(e.target.value)}
+                  onChange={(e) => {
+                    let aux = e.target.value;
+                    let value = aux.replace(/[0-9]/g, '');
+                    setBairro(value);
+                  }}
                   required="required"
                 />
               </label>
@@ -234,7 +243,11 @@ export default function Register() {
                   placeholder="Ex: São Paulo"
                   value={cidade}
                   maxLength="30"
-                  onChange={(e) => setCidade(e.target.value)}
+                  onChange={(e) => {
+                    let aux = e.target.value;
+                    let value = aux.replace(/[0-9]/g, '');
+                    setCidade(value);
+                  }}
                   required="required"
                 />
               </label>
@@ -243,7 +256,11 @@ export default function Register() {
                 <input
                   value={uf}
                   maxLength="2"
-                  onChange={(e) => setUf(e.target.value)}
+                  onChange={(e) => {
+                    let aux = e.target.value;
+                    let value = aux.replace(/[0-9]/g, '');
+                    setUf(value);
+                  }}
                   required="required"
                 />
               </label>
