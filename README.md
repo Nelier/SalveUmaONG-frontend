@@ -13,11 +13,7 @@ Abra a pasta do projeto no terminal e digite o seguinte comando:
 
 ```bash
 npm i
-```
-
-ou
-
-```bash
+#ou
 yarn install
 ```
 
