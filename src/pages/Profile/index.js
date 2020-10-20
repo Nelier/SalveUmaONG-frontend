@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory, useParams, useRouteMatch } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
+import Popup from 'reactjs-popup';
 
 import api from '../../services/api';
 
 import './styles.css';
 import logo from '../../assets/img/logoWeb.png';
 
-export default function Profile() {
+export default function ProfileTest() {
   const [ongID, setOngId] = useState('');
   const [resData, setResData] = useState({});
 
@@ -25,6 +26,11 @@ export default function Profile() {
   const [cep, setCep] = useState('');
   const [uf, setUf] = useState('');
 
+  const [modal, setModal] = useState(false);
+
+  const [email_visitor, setEmail_visitor] = useState('');
+  const [name_visitor, setName_visitor] = useState('');
+
   const history = useHistory();
   const id_ongLocal = localStorage.getItem('id_ong');
 
@@ -34,6 +40,8 @@ export default function Profile() {
     const data = {
       ongID,
     };
+
+
     if (data.ongID != '') {
       const request = async () => {
         try {
@@ -58,12 +66,45 @@ export default function Profile() {
     }
   }, [ongID]);
 
+  async function handleNewsletter() {
+
+    const data = {
+      name_visitor,
+      email_visitor,
+    }
+
+    if (data.ongID != '') {
+
+      try {
+        const response = await api.post(`/newsletter/${ongID}`, data, {
+          headers: {
+            authorization: true,
+          }
+        });
+
+        console.log(response);
+
+        alert("Cadastrado na NewsLetter!");
+
+        if (response) {
+          return null;
+        }
+      } catch (error) {
+        alert(error);
+      }
+    }
+  }
+
   async function handleLogin() {
     return alert(`funcionou o id_ong, o id: ${ongID}`);
   }
 
   async function handleCancel() {
     history.push('/');
+  }
+
+  function closeModal() {
+    setModal(false);
   }
 
   return (
@@ -101,8 +142,55 @@ export default function Profile() {
           <h1 className="QuemSomos">Quem somos</h1>
           <h3 className="name-fantasy">{name_fantasy}</h3>
           <p className="ongDescription">{description}</p>
+
+
+          <div className="Inscrever">
+            <p>Deseja receber mais informações sobre essa ONG?</p>
+            <button className="Inscrever-button"
+              onClick={() => { setModal(true); }}>
+              Inscrever-se
+                        </button>
+
+
+            <Popup open={modal} onClose={closeModal} modal>
+              <div className="popup-header">
+                <h3>Forneça seu nome e email para receber todas as novidades</h3>
+              </div>
+              <div className="popup-content">
+                <form onSubmit={handleNewsletter}>
+                  <label>
+                    Seu Nome:
+                                        <input
+                      placeholder="Victor"
+                      value={name_visitor}
+                      maxLength="50"
+                      onChange={(e) => {
+                        let aux = e.target.value;
+                        let value = aux.replace(/[0-9]/g, '');
+                        setName_visitor(value);
+                      }}
+                      required="required" />
+                  </label>
+
+                  <label>
+                    Email:
+                                        <input
+                      placeholder="exemplo@exemplo.com"
+                      value={email_visitor}
+                      maxLength="80"
+                      onChange={(e) => { setEmail_visitor(e.target.value); }}
+                      required="required" />
+                  </label>
+
+                  <button className="Inscrever-button" type="submit">
+                    Cadastrar
+                                    </button>
+                </form>
+              </div>
+            </Popup>
+          </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Edit from './pages/ProfileEdit';
 import Profile from './pages/Profile';
 import Recover from './pages/Recover';
+import PageTest from './pages/PageTest';
 
 export default function Routes() {
   return (
@@ -19,6 +20,7 @@ export default function Routes() {
           <Route path="/recover" component={Recover} />
           <Route path="/edit" component={Edit} />
           <Route path="/ong" component={Profile} />
+          <Route path="/pagetest" component={PageTest} />
         </Switch>
       </logProvider>
     </BrowserRouter>
